@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [url, setUrl] = useState()
+  const [shortendUrl, setShortenedUrl] = useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className='shortener'>
+        <h2>URL shortener</h2>
+        {/* form to enter URL to be shortened */}
+        <form>
+          <input
+            placeholder='Enter URL'
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}/>
+          <button>Submit</button>
+        </form>
+        {/* Section to view shortened URLS */}
+        {shortendUrl &&
+          <div className='shortener__viewShot'>
+            {shortendUrl}
+          </div>
+        }
+      </div>
     </div>
   );
 }
