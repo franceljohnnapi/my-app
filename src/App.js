@@ -2,10 +2,10 @@ import { useState } from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import './App.css';
 
-
 function App() {
   const [url, setUrl] = useState()
   const [shortendUrl, setShortenedUrl] = useState('')
+
   const shortenUrl = async (e) => {
     e.preventDefault();
     try {
@@ -17,7 +17,7 @@ function App() {
     } catch (e) {
       alert(e);
     }
-};
+  };
 
   return (
     <div className="app">
