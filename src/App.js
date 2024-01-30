@@ -10,7 +10,7 @@ function App() {
     e.preventDefault();
     try {
       const response = await fetch(
-        `https://api.shrtco.de/v2/shorten?url=${url}`
+        `https://ulvis.net/api.php?url=${url}`
       )
       const data = await response.json()
       setShortenedUrl(data.result.full_short_link);
